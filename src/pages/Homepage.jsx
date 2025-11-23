@@ -18,7 +18,7 @@ className='w-lg bg-yellow-50 p-4 rounded-2xl ml-180 mt-20'
     <p className='text-gray-400 mt-2 '>Personalized lessons,audio support,
       and readable <br></br>text designed for YOU. </p>
       <div className=' flex gap-5 mt-4'>
-   <Link to='/login'><button className='bg-green-700 text-amber-50 p-2 rounded-xl'>Start Learning</button></Link>
+   <Link to='/login'><button className='bg-teal-600 text-amber-50 p-2 rounded-xl'>Start Learning</button></Link>
     <button className='bg-gray-200 text-black-50 p-2 rounded-xl'>Explore Courses</button>
     </div>
     </div>

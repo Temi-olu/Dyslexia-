@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Toolspage() {
   const bgColors = ["#e1f5f2", "#f3f4f6", "#fef9c3", "#e5e7eb"]; // teal, light gray, cream, cool gray
@@ -15,7 +16,7 @@ export default function Toolspage() {
 
 
 <ul className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
-<li className="hover:text-teal-600 cursor-pointer">Home</li>
+<Link to="/"><li className="hover:text-teal-600 cursor-pointer">Home</li></Link>
 <li className="hover:text-teal-600 cursor-pointer">My Courses</li>
 <li className="hover:text-teal-600 cursor-pointer">Learning Tools</li>
 <li className="hover:text-teal-600 cursor-pointer">Progress</li>
