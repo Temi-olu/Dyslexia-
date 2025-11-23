@@ -17,7 +17,7 @@ const Registerpage = () => {
             <label className="block text-sm font-medium mb-1">Full Name</label>
             <input
               type="text"
-              placeholder="Alex Chen"
+              placeholder="Temi-Olu"
               className="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-gray-400"
             />
           </div>
@@ -27,7 +27,7 @@ const Registerpage = () => {
             <label className="block text-sm font-medium mb-1">Email</label>
             <input
               type="email"
-              placeholder="alex.chen@example.com"
+              placeholder="temi.olu@example.com"
               className="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-gray-400"
             />
           </div>
