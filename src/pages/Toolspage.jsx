@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import grace5 from '../assets/grace5.jpg'
 
 export default function Toolspage() {
   const bgColors = ["#e1f5f2", "#f3f4f6", "#fef9c3", "#e5e7eb"]; // teal, light gray, cream, cool gray
@@ -11,7 +12,7 @@ export default function Toolspage() {
   <nav className="w-full bg-white shadow-sm py-4 px-8 flex items-center justify-between">
 <div className="flex items-center gap-2">
 <div className="w-8 h-8 bg-teal-600 rounded-full"></div>
-<h1 className="text-xl font-semibold">Dyslexia Learning Platform</h1>
+<Link to='/'><h1 className="text-xl font-semibold">DyslexiaLearn</h1></Link>
 </div>
 
 
@@ -19,11 +20,11 @@ export default function Toolspage() {
 <Link to="/"><li className="hover:text-teal-600 cursor-pointer">Home</li></Link>
 <li className="hover:text-teal-600 cursor-pointer">My Courses</li>
 <li className="hover:text-teal-600 cursor-pointer">Learning Tools</li>
-<li className="hover:text-teal-600 cursor-pointer">Progress</li>
+<Link to='/dashboard'><li className="hover:text-teal-600 cursor-pointer">Progress</li></Link>
 </ul>
 
 
-<div className="w-10 h-10 rounded-full bg-gray-300"></div>
+<Link to='/profile'><img src={grace5} className="w-12 rounded-full h-12" /></Link>
 </nav>
      {/* Body */}
 <div className="p-10">

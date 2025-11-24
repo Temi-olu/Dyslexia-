@@ -5,6 +5,7 @@ import Registerpage from './pages/Registerpage'
 import Toolspage from './pages/Toolspage'
 import Dashboard from './pages/Dashboard'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Profile from './pages/Profile'
 function App() {
   return (
     <div className='min-h-screen flex flex-col overflow-x-hidden bg-gray-50'>
@@ -15,6 +16,7 @@ function App() {
       <Route path ='/register' element={<Registerpage />} ></Route>
       <Route path ='/tools' element={<Toolspage />} ></Route>
       <Route path ='/dashboard' element={<Dashboard />} ></Route>
+      <Route path='/profile' element={<Profile/>} ></Route>
      </Routes>
      </BrowserRouter>
     </div>

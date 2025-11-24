@@ -1,6 +1,7 @@
 import React from "react";
-import { Sidebar } from "../component/sidebar";
+import Sidebar from '../component/Sidebar'
 import { Link } from "react-router-dom";
+import grace5 from '../assets/grace5.jpg'
 function Dashboard() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
@@ -9,7 +10,7 @@ function Dashboard() {
       <nav className="w-full bg-white shadow-sm py-4 px-8 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-teal-600 rounded-full"></div>
-          <h1 className="text-xl font-semibold">Dyslexia Learning Platform</h1>
+          <h1 className="text-xl font-semibold">DyslexiaLearn</h1>
         </div>
 
         <ul className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
@@ -19,7 +20,7 @@ function Dashboard() {
         </ul>
 
         <div className="flex items-center gap-4">
-          <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
+          <img src={grace5} className="w-10 h-10 bg-gray-300 rounded-full" />
           <div className="w-10 h-10 border rounded-full flex items-center justify-center">
             ↻
           </div>

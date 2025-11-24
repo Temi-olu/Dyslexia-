@@ -1,8 +1,10 @@
-export const Sidebar = () => {
+import grace5 from '../assets/grace5.jpg'
+function Sidebar () {
+    
 return (
 <aside className="w-64 bg-white border-r h-screen p-6 flex flex-col gap-8">
 <div className="flex items-center gap-3">
-<div className="w-12 h-12 bg-gray-200 rounded-full"></div>
+<img src={grace5} className="w-12 h-12 bg-gray-200 rounded-full" />
 <div>
 <h2 className="font-semibold">Temi</h2>
 <p className="text-sm text-gray-500">Student</p>
@@ -21,3 +23,4 @@ return (
 </aside>
 );
 };
+export default Sidebar;
