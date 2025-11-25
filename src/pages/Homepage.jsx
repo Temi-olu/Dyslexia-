@@ -91,7 +91,7 @@ className='w-lg bg-yellow-50 p-4 rounded-2xl ml-180 mt-20'
 </div>
 </div>
 {/* Navbar */}
-<div className='relative bottom-93 bg-white opacity-90 h-25 p-3 w-270 ml-42 '><Navbar/></div>
+<div className='relative bottom-93 bg-white opacity-90 h-25 p-3 w-270 ml-42 rounded-xl '><Navbar/></div>
  {/* Comment */}
 
   <div className='bg-green-100 h-70 mb-4 p-23'>

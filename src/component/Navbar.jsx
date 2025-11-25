@@ -8,7 +8,7 @@ function Navbar() {
    
     <div className="flex gap-12" >
     <Link to='/'>  <button className="cursor-pointer">Home</button></Link>
-    <Link to=''> <button  className="cursor-pointer">Courses</button></Link> 
+    <Link to='/courses'> <button  className="cursor-pointer">Courses</button></Link> 
       <Link to='/tools'><button className="cursor-pointer">Tools</button></Link> 
     </div>
     {/* end part */}
