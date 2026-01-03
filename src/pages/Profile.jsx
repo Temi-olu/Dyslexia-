@@ -9,9 +9,8 @@ function Profile () {
           <div className="flex items-center gap-2">
             <span className="text-2xl font-bold text-teal-700">DyslexiaLearn</span>
           </div>
-
-          <nav className="flex items-center gap-8 text-gray-600 font-medium">
-   <Link to='/'>        <a href="#" className="hover:text-teal-700">Home</a>    </Link>
+    <nav className="flex items-center gap-8 text-gray-600 font-medium">
+   <Link to='/'><a href="#" className="hover:text-teal-700">Home</a>    </Link>
    <Link><a href="#" className="hover:text-teal-700">Courses</a></Link>  
  <Link><a href="#" className="text-teal-700 font-semibold">Profile</a></Link>
           </nav>

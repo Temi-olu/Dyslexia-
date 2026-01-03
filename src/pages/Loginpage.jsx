@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from 'react-router-dom';
 function Loginpage (){
   const [showPassword, setShowPassword] = useState(false);
-
+  const [email, setEmail]=useState('')
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white w-full max-w-md p-10 rounded-2xl shadow-lg">
@@ -15,6 +15,8 @@ function Loginpage (){
           <div>
             <label className="block text-sm font-medium mb-1">Email</label>
             <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               type="email"
               placeholder="Enter your email address"
               className="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-gray-400"

@@ -8,7 +8,9 @@ import { IoColorPaletteOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 import Textspeech from '../assets/Textspeech.jpg' 
 import Adjust from '../assets/Adjust.jpg'
+import Footer from '../component/Footer';
 function Homepage() {
+  
   return (
 
     <div>
@@ -94,14 +96,19 @@ className='w-lg bg-yellow-50 p-4 rounded-2xl ml-180 mt-20'
 <div className='relative bottom-93 bg-white opacity-90 h-25 p-3 w-270 ml-42 rounded-xl '><Navbar/></div>
  {/* Comment */}
 
-  <div className='bg-green-100 h-70 mb-4 p-23'>
+  <div className='bg-green-100 h-100 relative bottom-60 p-23'>
+
 <div className='flex-col ml-120'>
     <h1 >"This platform helps me read without stress.The<br></br>audio lessons and font choices make huge<br></br>differences"</h1>
  <p>-Temi,Student</p>
   </div>
 </div>
     
+    <Footer/>
     </div>
+
+
+
   )
 }
 

@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+:root {
+  --reading-scale: 1;
+
+  --base-font-size: calc(16px * var(--reading-scale));
+  --base-line-height: calc(1.7 * var(--reading-scale));
+  --base-letter-spacing: calc(0.035em * var(--reading-scale));
+
+  --content-padding: calc(1.25rem * var(--reading-scale));
+  --card-radius: calc(1rem * var(--reading-scale));
+}
+
+html {
+  font-size: var(--base-font-size);
+}
+
+body {
+  line-height: var(--base-line-height);
+  letter-spacing: var(--base-letter-spacing);
+
+  transition:
+    font-size 0.25s ease,
+    line-height 0.25s ease,
+    letter-spacing 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}

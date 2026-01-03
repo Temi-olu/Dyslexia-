@@ -1,13 +1,16 @@
-
+import { useEffect } from "react";
 import Homepage from './pages/Homepage'
 import Loginpage from './pages/Loginpage'
 import Registerpage from './pages/Registerpage'
 import Toolspage from './pages/Toolspage'
 import Dashboard from './pages/Dashboard'
-import CoursesPage from './pages/CoursesPage'
+import CoursePage from './pages/CoursePage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Profile from './pages/Profile'
+import { initReadingScale } from "./utils/readingScale";
+
 function App() {
+  initReadingScale();
   return (
     <div className='min-h-screen flex flex-col overflow-x-hidden bg-gray-50'>
      <BrowserRouter>
@@ -18,11 +21,11 @@ function App() {
       <Route path ='/tools' element={<Toolspage />} ></Route>
       <Route path ='/dashboard' element={<Dashboard />} ></Route>
       <Route path='/profile' element={<Profile/>} ></Route>
-      <Route path='/courses' element={<CoursesPage/>} ></Route>
+      <Route path='/courses' element={<CoursePage/>} ></Route>
      </Routes>
      </BrowserRouter>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
