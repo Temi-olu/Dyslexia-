@@ -183,7 +183,7 @@ export default function LessonReaderPage() {
             >
               <ArrowLeft className={`w-6 h-6 ${isDarkMode ? 'text-white' : 'text-gray-700'}`} />
             </button>
-
+        <h1 className=''>Back to Lesson</h1>
             {/* Reading Controls */}
             <div className="flex items-center gap-2">
               
@@ -201,7 +201,7 @@ export default function LessonReaderPage() {
               </button>
 
               {/* Font Size Controls */}
-              <div className="flex items-center gap-1 bg-gray-100 dark:bg-gray-700 rounded-lg">
+              <div className="flex items-center gap-1 bg-gray-100 rounded-lg">
                 <button
                   onClick={() => setFontSize(Math.max(14, fontSize - 2))}
                   className={`px-3 py-2 text-sm font-medium ${
@@ -220,18 +220,7 @@ export default function LessonReaderPage() {
                 </button>
               </div>
 
-              {/* Bold Toggle */}
-              <button
-                className={`px-3 py-2 rounded-lg font-bold ${
-                  isDarkMode 
-                    ? 'bg-gray-700 text-white hover:bg-gray-600' 
-                    : 'bg-gray-900 text-white hover:bg-gray-800'
-                } transition-colors`}
-                title="Bold Text"
-              >
-                A
-              </button>
-
+              
               {/* Light/Dark circles */}
               <div className="flex gap-2">
                 <button

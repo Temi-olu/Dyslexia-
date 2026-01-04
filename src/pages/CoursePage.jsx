@@ -67,8 +67,6 @@ export default function CoursesPage() {
           selectedDifficulty={selectedDifficulty}
           onDifficultyChange={setSelectedDifficulty}
         />
-
-        Courses Grid or Empty State
         {filteredCourses.length > 0 ? (
           <CourseGrid courses={filteredCourses} />
         ) : (

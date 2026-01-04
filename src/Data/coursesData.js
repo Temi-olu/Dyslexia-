@@ -1,9 +1,11 @@
+import reading from '../assets/reading.jpg';
+import phonics from '../assets/phonics.jpg';
 export const coursesData = [
   {
     id: 'basic-reading-1',
     title: 'Basic Reading Skills',
     description: 'Learn the fundamentals of reading with engaging exercises designed to build confidence.',
-    image: '/images/basic-reading.jpg',
+    image: reading,
     grade: 'mono',
     category: 'reading',
     difficulty: 'beginner',
@@ -116,7 +118,7 @@ export const coursesData = [
     id: 'phonics-training-1',
     title: 'Phonics Training',
     description: 'Master the sounds of letters and letter combinations to improve your reading and spelling.',
-    image: '/images/phonics.jpg',
+    image: phonics,
     grade: 'mono',
     category: 'phonics',
     difficulty: 'beginner',
