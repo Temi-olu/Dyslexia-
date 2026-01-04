@@ -1,4 +1,3 @@
-// // pages/Homepage.jsx - FULLY RESPONSIVE VERSION
 import Navbar from '../component/Navbar';
 import studentImage from '../assets/student.jpeg';
 import OIP from '../assets/OIP.jpg';
