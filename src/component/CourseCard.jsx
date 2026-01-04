@@ -1,6 +1,6 @@
-
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+
 
 export default function CourseCard({ course }) {
   const {
@@ -14,6 +14,7 @@ export default function CourseCard({ course }) {
     grade,
     difficulty,
     category,
+    totalLessons = 0,
   } = course;
 
   // Grade badge colors
@@ -28,6 +29,19 @@ export default function CourseCard({ course }) {
     beginner: 'bg-green-100 text-green-700',
     intermediate: 'bg-yellow-100 text-yellow-700',
     advanced: 'bg-red-100 text-red-700',
+  };
+
+  // Determine which lesson to navigate to
+  const getStartUrl = () => {
+    if (isStarted && course.lessons) {
+      // Find first incomplete lesson
+      const nextLesson = course.lessons.find(l => !l.isCompleted);
+      if (nextLesson) {
+        return `/course/${id}/lesson/${nextLesson.id}`;
+      }
+    }
+    // Default to first lesson
+    return `/course/${id}/lesson/${course.lessons?.[0]?.id || 'lesson-1'}`;
   };
 
   return (
@@ -63,11 +77,13 @@ export default function CourseCard({ course }) {
         
         {/* Category & Difficulty */}
         <div className="flex items-center gap-2 mb-3">
-          <Caption className="text-gray-500">{category}</Caption>
+          <caption className="text-gray-500 capitalize">{category}</caption>
           <span className="text-gray-300">•</span>
           <span className={`text-xs font-medium px-2 py-1 rounded ${difficultyColors[difficulty]}`}>
             {difficulty}
           </span>
+          <span className="text-gray-300">•</span>
+          <caption className="text-gray-500">{totalLessons} lessons</caption>
         </div>
 
         {/* Title */}
@@ -82,8 +98,8 @@ export default function CourseCard({ course }) {
         {isStarted && !isCompleted && (
           <div className="mb-4">
             <div className="flex justify-between items-center mb-1">
-              <Caption>Progress</Caption>
-              <Caption className="font-semibold">{progress}%</Caption>
+              <caption>Progress</caption>
+              <caption className="font-semibold">{progress}%</caption>
             </div>
             <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
               <motion.div
@@ -95,15 +111,15 @@ export default function CourseCard({ course }) {
           </div>
         )}
 
-        {/* CTA Button */}
-        <Link to={`/lesson/${id}`}>
-          <Button
+        {/* CTA Button - Links to Lesson Reader */}
+        <Link to={getStartUrl()}>
+          <button
             variant={isStarted ? 'accent' : 'primary'}
             size="md"
             fullWidth
           >
             {isCompleted ? 'Review' : isStarted ? 'Continue Learning' : 'Start Course'}
-          </Button>
+          </button>
         </Link>
       </div>
     </motion.div>

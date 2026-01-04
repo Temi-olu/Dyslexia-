@@ -1,9 +1,9 @@
-// pages/CoursesPage.jsx
+import EmptyState from '../component/Emptystate';
 import { useState, useEffect } from 'react';
 import Navbar from '../component/Navbar';
 import CourseFilter from '../component/CourseFilter';
 import CourseGrid from '../component/CourseGrid';
-import { coursesData } from '../Data/Lessondata';
+import { coursesData } from '../Data/coursesData';
 
 export default function CoursesPage() {
   const [selectedGrade, setSelectedGrade] = useState('all'); // 'all', 'mono', 'cat', 'adult'

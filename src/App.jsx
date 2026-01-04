@@ -5,6 +5,7 @@ import Registerpage from './pages/Registerpage'
 import Toolspage from './pages/Toolspage'
 import Dashboard from './pages/Dashboard'
 import CoursePage from './pages/CoursePage'
+import LessonReaderPage from './pages/LessonReaderPage'; 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Profile from './pages/Profile'
 import { initReadingScale } from "./utils/readingScale";
@@ -22,6 +23,7 @@ function App() {
       <Route path ='/dashboard' element={<Dashboard />} ></Route>
       <Route path='/profile' element={<Profile/>} ></Route>
       <Route path='/courses' element={<CoursePage/>} ></Route>
+      <Route path='/course/:courseId/lesson/:lessonId' element={<LessonReaderPage />} />
      </Routes>
      </BrowserRouter>
     </div>
