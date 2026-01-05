@@ -27,8 +27,6 @@ function Loginpage() {
 
     if (!password) {
       newErrors.password = 'Password is required';
-    } else if (password.length < 6) {
-      newErrors.password = 'Password must be at least 6 characters';
     }
 
     setErrors(newErrors);
@@ -67,22 +65,6 @@ function Loginpage() {
     }
   };
 
-  const [showDemoAccounts, setShowDemoAccounts] = useState(false);
-
-  const fillDemoAccount = (role) => {
-    const demoAccounts = {
-      student: { email: 'student@dyslexia.com', password: 'student123' },
-      teacher: { email: 'teacher@dyslexia.com', password: 'teacher123' },
-      parent: { email: 'parent@dyslexia.com', password: 'parent123' },
-      admin: { email: 'admin@dyslexia.com', password: 'admin123' }
-    };
-
-    const account = demoAccounts[role];
-    setEmail(account.email);
-    setPassword(account.password);
-    setShowDemoAccounts(false);
-  };
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-teal-50 to-blue-50 p-4">
       <div className="bg-white w-full max-w-md p-8 md:p-10 rounded-2xl shadow-2xl">
@@ -98,47 +80,8 @@ function Loginpage() {
           <p className="text-gray-600">Sign in to continue learning</p>
         </div>
 
-        <div className="mb-6">
-          <button
-            type="button"
-            onClick={() => setShowDemoAccounts(!showDemoAccounts)}
-            className="w-full bg-blue-50 text-blue-700 px-4 py-3 rounded-xl hover:bg-blue-100 transition text-sm font-medium flex items-center justify-center gap-2"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            Try Demo Accounts
-          </button>
-
-          {showDemoAccounts && (
-            <div className="mt-3 p-4 bg-gray-50 rounded-xl space-y-2">
-              <p className="text-xs text-gray-600 font-medium mb-2">Click to auto-fill:</p>
-              <button
-                type="button"
-                onClick={() => fillDemoAccount('student')}
-                className="w-full text-left px-3 py-2 bg-white rounded-lg hover:bg-teal-50 transition text-sm"
-              >
-                👨‍🎓 <strong>Student:</strong> student@dyslexia.com
-              </button>
-              <button
-                type="button"
-                onClick={() => fillDemoAccount('teacher')}
-                className="w-full text-left px-3 py-2 bg-white rounded-lg hover:bg-teal-50 transition text-sm"
-              >
-                👩‍🏫 <strong>Teacher:</strong> teacher@dyslexia.com
-              </button>
-              <button
-                type="button"
-                onClick={() => fillDemoAccount('parent')}
-                className="w-full text-left px-3 py-2 bg-white rounded-lg hover:bg-teal-50 transition text-sm"
-              >
-                👪 <strong>Parent:</strong> parent@dyslexia.com
-              </button>
-            </div>
-          )}
-        </div>
-
         <form onSubmit={handleSubmit} className="space-y-5">
+          {/* Email Input */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Email Address
@@ -164,6 +107,7 @@ function Loginpage() {
             )}
           </div>
 
+          {/* Password Input */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Password
@@ -208,6 +152,7 @@ function Loginpage() {
             )}
           </div>
 
+          {/* Remember Me & Forgot Password */}
           <div className="flex items-center justify-between text-sm">
             <label className="flex items-center gap-2 cursor-pointer group">
               <input
@@ -229,6 +174,7 @@ function Loginpage() {
             </button>
           </div>
 
+          {/* Login Button */}
           <button
             type="submit"
             disabled={isAuthenticating}
@@ -253,6 +199,7 @@ function Loginpage() {
           </button>
         </form>
 
+        {/* Register Link */}
         <div className="mt-8 text-center">
           <p className="text-gray-600">
             Don't have an account?{' '}
@@ -265,6 +212,7 @@ function Loginpage() {
           </p>
         </div>
 
+        {/* Back to Home */}
         <div className="mt-4 text-center">
           <Link
             to="/"
