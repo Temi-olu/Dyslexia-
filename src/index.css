@@ -39,7 +39,7 @@ body {
   font-family: var(--app-font-family);
   line-height: var(--base-line-height);
   letter-spacing: var(--base-letter-spacing);
-  background-color: var(--app-bg-color);
+  background-color: var(--app-bg-color) !important;
 
   transition:
     font-size 0.25s ease,
@@ -50,6 +50,20 @@ body {
     color 0.25s ease;
 }
 
+/* Apply background to main containers */
+.min-h-screen {
+  background-color: var(--app-bg-color);
+}
+
+/* Keep white cards white */
+.bg-white {
+  background-color: white !important;
+}
+
+.bg-gray-50 {
+  background-color: var(--app-bg-color) !important;
+}
+
 /* Apply global font settings to all text elements */
 *, *::before, *::after {
   font-family: inherit;
@@ -57,8 +71,21 @@ body {
 
 /* Dark mode styles */
 .dark-mode {
-  background-color: #1e1e1e;
-  color: #e0e0e0;
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+}
+
+.dark-mode body {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .min-h-screen {
+  background-color: #1e1e1e !important;
+}
+
+.dark-mode .bg-gray-50 {
+  background-color: #1e1e1e !important;
 }
 
 .dark-mode .bg-white {

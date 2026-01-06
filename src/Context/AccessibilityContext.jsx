@@ -23,22 +23,30 @@ export function AccessibilityProvider({ children }) {
   // Apply settings globally on mount and when they change
   useEffect(() => {
     applyGlobalSettings();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fontSize, fontFamily, bgColor, isDarkMode]);
 
   const applyGlobalSettings = () => {
-    document.documentElement.style.setProperty("--app-font-size", `${fontSize}px`);
-    document.documentElement.style.setProperty("--app-font-family", fontFamily);
-    document.documentElement.style.setProperty("--app-bg-color", bgColor);
+    const root = document.documentElement;
+    const body = document.body;
     
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark-mode');
-      document.body.style.backgroundColor = '#1e1e1e';
-      document.body.style.color = '#e0e0e0';
-    } else {
-      document.documentElement.classList.remove('dark-mode');
-      document.body.style.backgroundColor = bgColor;
-      document.body.style.color = '#1a1a1a';
-    }
+    // Set CSS variables
+    root.style.setProperty("--app-font-size", `${fontSize}px`);
+    root.style.setProperty("--app-font-family", fontFamily);
+    root.style.setProperty("--app-bg-color", bgColor);
+    
+    // Force immediate update
+    requestAnimationFrame(() => {
+      if (isDarkMode) {
+        root.classList.add('dark-mode');
+        body.style.setProperty('background-color', '#1e1e1e', 'important');
+        body.style.setProperty('color', '#e0e0e0', 'important');
+      } else {
+        root.classList.remove('dark-mode');
+        body.style.setProperty('background-color', bgColor, 'important');
+        body.style.setProperty('color', '#1a1a1a', 'important');
+      }
+    });
   };
 
   const saveSettings = () => {
@@ -73,4 +81,3 @@ export function AccessibilityProvider({ children }) {
 export function useAccessibility() {
   return useContext(AccessibilityContext);
 }
-

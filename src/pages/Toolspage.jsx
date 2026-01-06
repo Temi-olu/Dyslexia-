@@ -19,7 +19,7 @@ export default function Toolspage() {
     saveSettings
   } = useAccessibility();
 
-  // ==================== TEXT-TO-SPEECH STATE ====================
+  // TEXT-TO-SPEECH STATE 
   const [text, setText] = useState("");
   const [isPlaying, setIsPlaying] = useState(false);
   const [showTextInput, setShowTextInput] = useState(false);
@@ -28,8 +28,13 @@ export default function Toolspage() {
   const utteranceRef = useRef(null);
   const fileInputRef = useRef(null);
 
-  // ==================== DISPLAY MODE STATE ====================
+  // DISPLAY MODE STATE
   const [selectedBgColor, setSelectedBgColor] = useState(bgColor);
+
+  // Update selectedBgColor when context bgColor changes
+  useEffect(() => {
+    setSelectedBgColor(bgColor);
+  }, [bgColor]);
 
   const bgColors = [
     { color: "#ffffff", name: "White" },
@@ -45,7 +50,7 @@ export default function Toolspage() {
     { id: "Atkinson Hyperlegible", name: "Atkinson", preview: "Abc 123" },
   ];
 
-  // ==================== TEXT-TO-SPEECH FUNCTIONS ====================
+  // TEXT-TO-SPEECH FUNCTIONS 
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
     if (file && file.type === "text/plain") {
@@ -81,7 +86,7 @@ export default function Toolspage() {
     };
   }, []);
 
-  // ==================== FONT SETTINGS FUNCTIONS ====================
+  // FONT SETTINGS FUNCTIONS 
   const updateFontSize = (value) => {
     setFontSize(parseInt(value));
   };
@@ -90,7 +95,7 @@ export default function Toolspage() {
     setFontFamily(font);
   };
 
-  // ==================== DISPLAY MODE FUNCTIONS ====================
+  // DISPLAY MODE FUNCTIONS 
   const handleBgColorChange = (color) => {
     setSelectedBgColor(color);
     setBgColor(color);
@@ -110,7 +115,7 @@ export default function Toolspage() {
     }
   };
 
-  // ==================== SAVE SETTINGS ====================
+  // SAVE SETTINGS 
   const handleSaveSettings = () => {
     const success = saveSettings();
     if (success) {
@@ -154,7 +159,7 @@ export default function Toolspage() {
 
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-          {/* ==================== TEXT-TO-SPEECH CARD ==================== */}
+          {/* TEXT-TO-SPEECH CARD  */}
           <div className="bg-white rounded-3xl shadow-sm p-6 md:p-8">
             <h2 className="text-2xl font-semibold mb-3 text-gray-900">
               Text-to-Speech
@@ -224,7 +229,7 @@ export default function Toolspage() {
             </button>
           </div>
 
-          {/* ==================== FONT SETTINGS CARD ==================== */}
+          {/* FONT SETTINGS CARD  */}
           <div className="bg-white rounded-3xl shadow-sm p-6 md:p-8">
             <h2 className="text-2xl font-semibold mb-3 text-gray-900">
               Font Settings
@@ -283,7 +288,7 @@ export default function Toolspage() {
             </div>
           </div>
 
-          {/* ==================== DISPLAY MODE CARD ==================== */}
+          {/*  DISPLAY MODE CARD */}
           <div className="bg-white rounded-3xl shadow-sm p-6 md:p-8">
             <h2 className="text-2xl font-semibold mb-3 text-gray-900">
               Display Mode
@@ -358,8 +363,6 @@ export default function Toolspage() {
           </div>
         </div>
       </div>
-
-      <Footer />
 
       {/* Custom Slider Styles */}
       <style jsx>{`
