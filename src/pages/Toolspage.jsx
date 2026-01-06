@@ -1,335 +1,121 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
-// import grace5 from "../assets/grace5.jpg";
-
-// export default function Toolspage() {
-//   const bgColors = ["#e1f5f2", "#f3f4f6", "#fef9c3", "#e5e7eb"];
-
-//   /* ===============================
-//      GLOBAL UPDATE HELPERS
-//   =============================== */
-
-//   const updateFontSize = (value) => {
-//     localStorage.setItem("fontSize", value);
-//     document.documentElement.style.setProperty(
-//       "--app-font-size",
-//       `${value}px`
-//     );
-//   };
-
-//   const updateLineHeight = (value) => {
-//     localStorage.setItem("lineHeight", value);
-//     document.documentElement.style.setProperty(
-//       "--app-line-height",
-//       value
-//     );
-//   };
-
-//   const updateLetterSpacing = (value) => {
-//     localStorage.setItem("letterSpacing", value);
-//     document.documentElement.style.setProperty(
-//       "--app-letter-spacing",
-//       `${value}px`
-//     );
-//   };
-
-//   return (
-//     <div className="min-h-screen bg-gray-100 text-gray-900">
-//       {/* ===============================
-//           NAVBAR
-//       =============================== */}
-//       <nav className="w-full bg-white shadow-sm py-4 px-8 flex items-center justify-between">
-//         <div className="flex items-center gap-2">
-//           <div className="w-8 h-8 bg-teal-600 rounded-full"></div>
-//           <Link to="/">
-//             <h1 className="text-xl font-semibold">DyslexiaLearn</h1>
-//           </Link>
-//         </div>
-
-//         <ul className="hidden md:flex items-center gap-8 font-medium">
-//           <Link to="/"><li className="hover:text-teal-600">Home</li></Link>
-//           <li className="hover:text-teal-600">My Courses</li>
-//           <li className="hover:text-teal-600">Learning Tools</li>
-//           <Link to="/dashboard"><li className="hover:text-teal-600">Progress</li></Link>
-//         </ul>
-
-//         <Link to="/profile">
-//           <img src={grace5} className="w-12 h-12 rounded-full" />
-//         </Link>
-//       </nav>
-
-//       {/* ===============================
-//           BODY
-//       =============================== */}
-//       <div className="p-10">
-//         <h1 className="text-4xl font-bold mb-10">Learning Tools</h1>
-
-//         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-//           {/* ===============================
-//               TEXT TO SPEECH
-//           =============================== */}
-//           <div className="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
-//             <h2 className="text-2xl font-semibold">Text-to-Speech</h2>
-//             <p className="text-gray-600">
-//               Listen to any text read aloud.
-//             </p>
-
-//             <div className="flex gap-4">
-//               <button className="bg-teal-600 text-white rounded-xl px-4 py-2 w-full">
-//                 Upload Doc
-//               </button>
-//               <button className="bg-gray-200 rounded-xl px-4 py-2 w-full">
-//                 Paste Text
-//               </button>
-//             </div>
-
-//             <button className="bg-orange-300 text-white rounded-xl py-3 text-lg">
-//               ▶ Play
-//             </button>
-//           </div>
-
-//           {/* ===============================
-//               FONT SETTINGS (GLOBAL)
-//           =============================== */}
-//           <div className="bg-white rounded-2xl shadow p-6 flex flex-col gap-6">
-//             <h2 className="text-2xl font-semibold">Font Settings</h2>
-//             <p className="text-gray-600">
-//               These changes affect the entire app.
-//             </p>
-
-//             {/* FONT SIZE */}
-//             <div>
-//               <label className="font-medium">Font Size</label>
-//               <input
-//                 type="range"
-//                 min="14"
-//                 max="24"
-//                 defaultValue={localStorage.getItem("fontSize") || 16}
-//                 onChange={(e) => updateFontSize(e.target.value)}
-//                 className="w-full"
-//               />
-//             </div>
-
-//             {/* LINE HEIGHT */}
-//             <div>
-//               <label className="font-medium">Line Height</label>
-//               <input
-//                 type="range"
-//                 min="1.4"
-//                 max="2.2"
-//                 step="0.1"
-//                 defaultValue={localStorage.getItem("lineHeight") || 1.6}
-//                 onChange={(e) => updateLineHeight(e.target.value)}
-//                 className="w-full"
-//               />
-//             </div>
-
-//             {/* LETTER SPACING */}
-//             <div>
-//               <label className="font-medium">Letter Spacing</label>
-//               <input
-//                 type="range"
-//                 min="0"
-//                 max="2"
-//                 step="0.1"
-//                 defaultValue={localStorage.getItem("letterSpacing") || 0.5}
-//                 onChange={(e) => updateLetterSpacing(e.target.value)}
-//                 className="w-full"
-//               />
-//             </div>
-//           </div>
-
-//           {/* ===============================
-//               DISPLAY MODE
-//           =============================== */}
-//           <div className="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
-//             <h2 className="text-2xl font-semibold">Display Mode</h2>
-//             <p className="text-gray-600">
-//               Reduce eye strain with custom colors.
-//             </p>
-
-//             <label className="font-medium">Background Colors</label>
-//             <div className="flex gap-4">
-//               {bgColors.map((color) => (
-//                 <button
-//                   key={color}
-//                   style={{ backgroundColor: color }}
-//                   className="w-10 h-10 rounded-full border"
-//                 />
-//               ))}
-//             </div>
-
-//             <div className="flex items-center justify-between mt-4">
-//               <span className="font-medium">Dark Mode</span>
-//               <div className="w-11 h-6 bg-gray-300 rounded-full relative">
-//                 <div className="absolute top-0.5 left-0.5 bg-white w-5 h-5 rounded-full shadow"></div>
-//               </div>
-//             </div>
-//           </div>
-
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-// pages/Toolspage.jsx - FULLY FUNCTIONAL & RESPONSIVE MATCHING MOCKUP
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
-import { Play, Upload, FileText, Pause, Square } from "lucide-react";
+import { Play, Upload, FileText, Pause, Square, Save, Check } from "lucide-react";
+import { useAccessibility } from "../Context/AccessibilityContext";
 
 export default function Toolspage() {
+  // Get accessibility context
+  const {
+    fontSize,
+    setFontSize,
+    fontFamily,
+    setFontFamily,
+    bgColor,
+    setBgColor,
+    isDarkMode,
+    setIsDarkMode,
+    saveSettings
+  } = useAccessibility();
+
   // ==================== TEXT-TO-SPEECH STATE ====================
   const [text, setText] = useState("");
   const [isPlaying, setIsPlaying] = useState(false);
   const [showTextInput, setShowTextInput] = useState(false);
+  const [saveSuccess, setSaveSuccess] = useState(false);
   const synth = useRef(window.speechSynthesis);
   const utteranceRef = useRef(null);
   const fileInputRef = useRef(null);
 
-  // ==================== FONT SETTINGS STATE ====================
-  const [fontSize, setFontSize] = useState(
-    parseInt(localStorage.getItem("fontSize")) || 16
-  );
-  const [lineHeight, setLineHeight] = useState(
-    parseFloat(localStorage.getItem("lineHeight")) || 1.6
-  );
-  const [letterSpacing, setLetterSpacing] = useState(
-    parseFloat(localStorage.getItem("letterSpacing")) || 0.5
-  );
-
   // ==================== DISPLAY MODE STATE ====================
-  const [selectedBgColor, setSelectedBgColor] = useState(
-    localStorage.getItem("bgColor") || "#ffffff"
-  );
-  const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem("darkMode") === "true"
-  );
+  const [selectedBgColor, setSelectedBgColor] = useState(bgColor);
 
-  // Background colors matching mockup
   const bgColors = [
-    { color: "#e0f2f1", name: "Teal" },      // Light teal
-    { color: "#ffffff", name: "White" },     // White
-    { color: "#fffde7", name: "Cream" },     // Light cream
-    { color: "#e1f5fe", name: "Blue" },      // Light blue
+    { color: "#ffffff", name: "White" },
+    { color: "#fef9e7", name: "Cream" },
+    { color: "#e3f2fd", name: "Light Blue" },
+    { color: "#e8f5e9", name: "Light Green" },
   ];
 
-  // ==================== APPLY SETTINGS ON LOAD ====================
-  useEffect(() => {
-    applyFontSettings();
-    applyTheme();
-  }, []);
+  const fonts = [
+    { id: "OpenDyslexic", name: "OpenDyslexic", preview: "Abc 123" },
+    { id: "Lexend", name: "Lexend", preview: "Abc 123" },
+    { id: "Comic Neue", name: "Comic Neue", preview: "Abc 123" },
+    { id: "Atkinson Hyperlegible", name: "Atkinson", preview: "Abc 123" },
+  ];
 
   // ==================== TEXT-TO-SPEECH FUNCTIONS ====================
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
-    if (!file) return;
-
-    if (file.type !== "text/plain") {
-      alert("Please upload a .txt file");
-      return;
+    if (file && file.type === "text/plain") {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        setText(event.target.result);
+        setShowTextInput(true);
+      };
+      reader.readAsText(file);
     }
-
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      setText(event.target.result);
-      setShowTextInput(true);
-    };
-    reader.readAsText(file);
   };
 
   const handlePasteText = () => {
-    setShowTextInput(true);
+    setShowTextInput(!showTextInput);
   };
 
-  const handlePlay = () => {
-    if (!text.trim()) {
-      alert("Please enter some text or upload a document first!");
-      return;
-    }
-
+  const toggleSpeech = () => {
     if (isPlaying) {
       synth.current.cancel();
       setIsPlaying(false);
-    } else {
-      utteranceRef.current = new SpeechSynthesisUtterance(text);
-      utteranceRef.current.rate = 1;
-      utteranceRef.current.pitch = 1;
-      utteranceRef.current.volume = 1;
-      utteranceRef.current.onend = () => setIsPlaying(false);
-      utteranceRef.current.onerror = () => {
-        setIsPlaying(false);
-        alert("An error occurred while reading the text.");
-      };
-
-      synth.current.speak(utteranceRef.current);
+    } else if (text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.onend = () => setIsPlaying(false);
+      utteranceRef.current = utterance;
+      synth.current.speak(utterance);
       setIsPlaying(true);
     }
   };
 
+  useEffect(() => {
+    return () => {
+      synth.current.cancel();
+    };
+  }, []);
+
   // ==================== FONT SETTINGS FUNCTIONS ====================
-  const applyFontSettings = () => {
-    document.documentElement.style.setProperty("--app-font-size", `${fontSize}px`);
-    document.documentElement.style.setProperty("--app-line-height", lineHeight);
-    document.documentElement.style.setProperty("--app-letter-spacing", `${letterSpacing}px`);
-  };
-
   const updateFontSize = (value) => {
-    const size = parseInt(value);
-    setFontSize(size);
-    localStorage.setItem("fontSize", size);
-    document.documentElement.style.setProperty("--app-font-size", `${size}px`);
+    setFontSize(parseInt(value));
   };
 
-  const updateLineHeight = (value) => {
-    const height = parseFloat(value);
-    setLineHeight(height);
-    localStorage.setItem("lineHeight", height);
-    document.documentElement.style.setProperty("--app-line-height", height);
+  const updateFontFamily = (font) => {
+    setFontFamily(font);
   };
 
-  const updateLetterSpacing = (value) => {
-    const spacing = parseFloat(value);
-    setLetterSpacing(spacing);
-    localStorage.setItem("letterSpacing", spacing);
-    document.documentElement.style.setProperty("--app-letter-spacing", `${spacing}px`);
-  };
-
-  // ==================== THEME FUNCTIONS ====================
-  const applyTheme = () => {
-    const dark = localStorage.getItem("darkMode") === "true";
-    const bg = localStorage.getItem("bgColor") || "#ffffff";
-    
-    if (dark) {
-      document.body.style.backgroundColor = "#1f2937";
-      document.body.style.color = "#f3f4f6";
-    } else {
-      document.body.style.backgroundColor = bg;
-      document.body.style.color = "#111827";
-    }
-  };
-
+  // ==================== DISPLAY MODE FUNCTIONS ====================
   const handleBgColorChange = (color) => {
     setSelectedBgColor(color);
-    localStorage.setItem("bgColor", color);
-    if (!isDarkMode) {
-      document.body.style.backgroundColor = color;
+    setBgColor(color);
+    if (isDarkMode) {
+      setIsDarkMode(false);
     }
   };
 
   const toggleDarkMode = () => {
-    const newMode = !isDarkMode;
-    setIsDarkMode(newMode);
-    localStorage.setItem("darkMode", newMode);
-    
-    if (newMode) {
-      document.body.style.backgroundColor = "#1f2937";
-      document.body.style.color = "#f3f4f6";
+    setIsDarkMode(!isDarkMode);
+    if (!isDarkMode) {
+      setSelectedBgColor("#1e1e1e");
+      setBgColor("#1e1e1e");
     } else {
-      document.body.style.backgroundColor = selectedBgColor;
-      document.body.style.color = "#111827";
+      setSelectedBgColor("#ffffff");
+      setBgColor("#ffffff");
+    }
+  };
+
+  // ==================== SAVE SETTINGS ====================
+  const handleSaveSettings = () => {
+    const success = saveSettings();
+    if (success) {
+      setSaveSuccess(true);
+      setTimeout(() => setSaveSuccess(false), 2000);
     }
   };
 
@@ -337,16 +123,37 @@ export default function Toolspage() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-        
-        {/* Header */}
-        <h1 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900">
-          Learning Tools
-        </h1>
+      <div className="container mx-auto px-4 py-8 max-w-7xl">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-0">
+            Learning Tools
+          </h1>
+          
+          {/* Save Settings Button */}
+          <button
+            onClick={handleSaveSettings}
+            className={`flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold transition-all ${
+              saveSuccess
+                ? 'bg-green-600 text-white'
+                : 'bg-teal-600 hover:bg-teal-700 text-white'
+            }`}
+          >
+            {saveSuccess ? (
+              <>
+                <Check className="w-5 h-5" />
+                Settings Saved!
+              </>
+            ) : (
+              <>
+                <Save className="w-5 h-5" />
+                Save Settings
+              </>
+            )}
+          </button>
+        </div>
 
-        {/* Three Column Grid - Responsive */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
           {/* ==================== TEXT-TO-SPEECH CARD ==================== */}
           <div className="bg-white rounded-3xl shadow-sm p-6 md:p-8">
             <h2 className="text-2xl font-semibold mb-3 text-gray-900">
@@ -356,43 +163,52 @@ export default function Toolspage() {
               Listen to any text read aloud.
             </p>
 
-            {/* Upload & Paste Buttons */}
+            {/* Upload and Paste Buttons */}
             <div className="flex gap-3 mb-4">
               <input
-                ref={fileInputRef}
                 type="file"
-                accept=".txt"
+                ref={fileInputRef}
                 onChange={handleFileUpload}
+                accept=".txt"
                 className="hidden"
               />
               <button
-                onClick={() => fileInputRef.current?.click()}
-                className="flex-1 py-3 bg-teal-600 hover:bg-teal-700 text-white rounded-2xl font-medium transition-all"
+                onClick={() => fileInputRef.current.click()}
+                className="flex-1 bg-teal-600 hover:bg-teal-700 text-white rounded-2xl py-3 px-4 font-medium transition-all flex items-center justify-center gap-2"
               >
+                <Upload className="w-4 h-4" />
                 Upload Doc
               </button>
               <button
                 onClick={handlePasteText}
-                className="flex-1 py-3 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-2xl font-medium transition-all"
+                className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-900 rounded-2xl py-3 px-4 font-medium transition-all flex items-center justify-center gap-2"
               >
+                <FileText className="w-4 h-4" />
                 Paste Text
               </button>
             </div>
 
-            {/* Text Input Area (shown when Paste Text clicked) */}
+            {/* Text Input Area */}
             {showTextInput && (
               <textarea
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 placeholder="Paste your text here..."
-                className="w-full h-32 p-4 mb-4 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 resize-none text-sm"
+                className="w-full h-32 p-3 border-2 border-gray-200 rounded-2xl mb-4 resize-none focus:outline-none focus:border-teal-600"
               />
             )}
 
             {/* Play Button */}
             <button
-              onClick={handlePlay}
-              className="w-full py-4 bg-orange-400 hover:bg-orange-500 text-white rounded-2xl font-medium transition-all flex items-center justify-center gap-2 text-lg"
+              onClick={toggleSpeech}
+              disabled={!text}
+              className={`w-full py-4 px-6 rounded-2xl font-semibold text-lg transition-all flex items-center justify-center gap-2 ${
+                !text
+                  ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                  : isPlaying
+                  ? 'bg-red-500 hover:bg-red-600 text-white'
+                  : 'bg-orange-500 hover:bg-orange-600 text-white'
+              }`}
             >
               {isPlaying ? (
                 <>
@@ -428,7 +244,7 @@ export default function Toolspage() {
                 max="24"
                 value={fontSize}
                 onChange={(e) => updateFontSize(e.target.value)}
-                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider-thumb-red"
+                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
                 style={{
                   background: `linear-gradient(to right, #ef4444 0%, #ef4444 ${((fontSize - 12) / (24 - 12)) * 100}%, #e5e7eb ${((fontSize - 12) / (24 - 12)) * 100}%, #e5e7eb 100%)`
                 }}
@@ -440,51 +256,29 @@ export default function Toolspage() {
               </div>
             </div>
 
-            {/* Line Height Slider */}
-            <div className="mb-8">
-              <label className="block font-semibold text-gray-900 mb-3">
-                Line Height
-              </label>
-              <input
-                type="range"
-                min="1.2"
-                max="2.4"
-                step="0.1"
-                value={lineHeight}
-                onChange={(e) => updateLineHeight(e.target.value)}
-                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
-                style={{
-                  background: `linear-gradient(to right, #ef4444 0%, #ef4444 ${((lineHeight - 1.2) / (2.4 - 1.2)) * 100}%, #e5e7eb ${((lineHeight - 1.2) / (2.4 - 1.2)) * 100}%, #e5e7eb 100%)`
-                }}
-              />
-              <div className="flex justify-between text-xs text-gray-500 mt-1">
-                <span>1.2</span>
-                <span className="font-semibold text-gray-900">{lineHeight.toFixed(1)}</span>
-                <span>2.4</span>
-              </div>
-            </div>
-
-            {/* Letter Spacing Slider */}
+            {/* Font Family Selector */}
             <div>
               <label className="block font-semibold text-gray-900 mb-3">
-                Letter Spacing
+                Font Family
               </label>
-              <input
-                type="range"
-                min="0"
-                max="3"
-                step="0.1"
-                value={letterSpacing}
-                onChange={(e) => updateLetterSpacing(e.target.value)}
-                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
-                style={{
-                  background: `linear-gradient(to right, #ef4444 0%, #ef4444 ${(letterSpacing / 3) * 100}%, #e5e7eb ${(letterSpacing / 3) * 100}%, #e5e7eb 100%)`
-                }}
-              />
-              <div className="flex justify-between text-xs text-gray-500 mt-1">
-                <span>0px</span>
-                <span className="font-semibold text-gray-900">{letterSpacing.toFixed(1)}px</span>
-                <span>3px</span>
+              <div className="grid grid-cols-2 gap-3">
+                {fonts.map((font) => (
+                  <button
+                    key={font.id}
+                    onClick={() => updateFontFamily(font.id)}
+                    className={`p-3 rounded-xl border-2 transition-all ${
+                      fontFamily === font.id
+                        ? 'bg-teal-600 border-teal-600 text-white'
+                        : 'bg-white border-gray-300 hover:border-teal-600 text-gray-900'
+                    }`}
+                    style={fontFamily === font.id ? {} : { fontFamily: font.id }}
+                  >
+                    <div className="font-medium text-sm mb-1">{font.name}</div>
+                    <div className="text-lg opacity-80" style={{ fontFamily: font.id }}>
+                      {font.preview}
+                    </div>
+                  </button>
+                ))}
               </div>
             </div>
           </div>
@@ -509,14 +303,14 @@ export default function Toolspage() {
                     key={color}
                     onClick={() => handleBgColorChange(color)}
                     className={`w-16 h-16 rounded-full border-2 transition-all hover:scale-110 ${
-                      selectedBgColor === color
+                      selectedBgColor === color && !isDarkMode
                         ? 'border-gray-900 ring-4 ring-gray-200'
                         : 'border-gray-300'
                     }`}
                     style={{ backgroundColor: color }}
                     title={name}
                   >
-                    {selectedBgColor === color && (
+                    {selectedBgColor === color && !isDarkMode && (
                       <div className="w-full h-full flex items-center justify-center">
                         <div className="w-6 h-6 bg-gray-900 rounded-full"></div>
                       </div>
@@ -554,12 +348,12 @@ export default function Toolspage() {
           </div>
           <div className="bg-green-50 border border-green-200 rounded-2xl p-4">
             <p className="text-sm text-green-800">
-              <strong>✨ Note:</strong> Font settings apply globally across all pages
+              <strong>✨ Note:</strong> Click "Save Settings" to apply changes globally across all pages
             </p>
           </div>
           <div className="bg-purple-50 border border-purple-200 rounded-2xl p-4">
             <p className="text-sm text-purple-800">
-              <strong>🎨 Try:</strong> Cream or teal backgrounds reduce eye strain
+              <strong>🎨 Try:</strong> OpenDyslexic font is specially designed for dyslexia
             </p>
           </div>
         </div>
@@ -569,6 +363,22 @@ export default function Toolspage() {
 
       {/* Custom Slider Styles */}
       <style jsx>{`
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Comic+Neue:wght@400;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+        
+        @font-face {
+          font-family: 'OpenDyslexic';
+          src: url('https://cdn.jsdelivr.net/gh/antijingoist/opendyslexic@master/compiled/OpenDyslexic-Regular.otf') format('opentype');
+          font-weight: normal;
+          font-style: normal;
+        }
+
+        @font-face {
+          font-family: 'OpenDyslexic';
+          src: url('https://cdn.jsdelivr.net/gh/antijingoist/opendyslexic@master/compiled/OpenDyslexic-Bold.otf') format('opentype');
+          font-weight: bold;
+          font-style: normal;
+        }
+
         /* Custom slider thumb */
         input[type="range"]::-webkit-slider-thumb {
           appearance: none;

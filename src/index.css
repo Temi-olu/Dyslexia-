@@ -1,9 +1,29 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Comic+Neue:wght@400;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('https://cdn.jsdelivr.net/gh/antijingoist/opendyslexic@master/compiled/OpenDyslexic-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('https://cdn.jsdelivr.net/gh/antijingoist/opendyslexic@master/compiled/OpenDyslexic-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
 
 :root {
   --reading-scale: 1;
 
-  --base-font-size: calc(16px * var(--reading-scale));
+  /* Global accessibility settings */
+  --app-font-size: 16px;
+  --app-font-family: 'Lexend', sans-serif;
+  --app-bg-color: #ffffff;
+  
+  --base-font-size: var(--app-font-size);
   --base-line-height: calc(1.7 * var(--reading-scale));
   --base-letter-spacing: calc(0.035em * var(--reading-scale));
 
@@ -16,13 +36,47 @@ html {
 }
 
 body {
+  font-family: var(--app-font-family);
   line-height: var(--base-line-height);
   letter-spacing: var(--base-letter-spacing);
+  background-color: var(--app-bg-color);
 
   transition:
     font-size 0.25s ease,
+    font-family 0.2s ease,
     line-height 0.25s ease,
     letter-spacing 0.25s ease,
     background-color 0.25s ease,
     color 0.25s ease;
+}
+
+/* Apply global font settings to all text elements */
+*, *::before, *::after {
+  font-family: inherit;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.dark-mode .bg-white {
+  background-color: #2d2d2d !important;
+}
+
+.dark-mode .text-gray-900 {
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .text-gray-600 {
+  color: #a0a0a0 !important;
+}
+
+.dark-mode .border-gray-200 {
+  border-color: #3d3d3d !important;
+}
+
+.dark-mode .border-gray-300 {
+  border-color: #4d4d4d !important;
 }
