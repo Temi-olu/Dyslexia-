@@ -13,12 +13,12 @@ return (
 
 
 <nav className="flex flex-col gap-4 text-gray-700 font-medium">
-<button className="flex items-center gap-3 bg-teal-100 text-teal-700 px-4 py-2 rounded-lg">
+<button className="flex items-center gap-3 bg-teal-100 text-teal-700 px-4 py-2 rounded-lg cursor-pointer">
 📘 My Courses
 </button>
-<button className="flex items-center gap-3 hover:text-teal-600">📊 Progress</button>
-<button className="flex items-center gap-3 hover:text-teal-600">🛠 Tools</button>
-<button className="flex items-center gap-3 hover:text-teal-600">⚙ Settings</button>
+<button className="flex items-center gap-3 hover:text-teal-600 cursor-pointer">📊 Progress</button>
+<button className="flex items-center gap-3 hover:text-teal-600 cursor-pointer">🛠 Tools</button>
+<button className="flex items-center gap-3 hover:text-teal-600 cursor-pointer">⚙ Settings</button>
 </nav>
 </aside>
 );

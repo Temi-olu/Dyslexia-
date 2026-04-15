@@ -117,6 +117,7 @@ export default function CourseCard({ course }) {
             variant={isStarted ? 'accent' : 'primary'}
             size="md"
             fullWidth
+            className='bg-teal-500 p-2 border-white rounded-lg text-white w-full hover:bg-teal-600 transition cursor-pointer mt-1'
           >
             {isCompleted ? 'Review' : isStarted ? 'Continue Learning' : 'Start Course'}
           </button>
