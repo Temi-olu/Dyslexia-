@@ -13,6 +13,7 @@ import { AuthProvider } from './Context/AuthContext';
 import { AccessibilityProvider } from './Context/AccessibilityContext';
 import ProtectedRoute from './component/ProctectedRoute';
 import { Toaster } from 'sonner';
+import { LanguageProvider } from "./Context/LanguageContext";
 
 function App() {
   useEffect(() => {
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <div className='min-h-screen flex flex-col overflow-x-hidden bg-gray-50'>
+      <LanguageProvider>
       <BrowserRouter>
         <AccessibilityProvider>
           <AuthProvider>
@@ -110,6 +112,7 @@ function App() {
           </AuthProvider>
         </AccessibilityProvider>
       </BrowserRouter>
+      </LanguageProvider>
     </div>
   );
 }
